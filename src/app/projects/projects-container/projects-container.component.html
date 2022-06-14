@@ -13,18 +13,22 @@
     </div>
   </div>
 </div>
-<div *ngIf="loading" class="center-page">
+<div *ngIf="loading$ | async" class="center-page">
   <span class="spinner primary"></span>
   <p>Loading...</p>
 </div>
+<span *ngIf="saving$ | async" class="toast"> Saving... </span>
 <div class="row">
-  <div *ngIf="errorMessage" class="card large error">
+  <div *ngIf="errorMessage$ | async as errorMessage" class="card large error">
     <section>
       <p><span class="icon-alert inverse"></span> {{ errorMessage }}</p>
     </section>
   </div>
 </div>
-<app-project-list
-  [projects]="projects"
-  (saveListItem)="onSaveListItem($event)"
-></app-project-list>
+<ng-container *ngIf="projects$ | async as projects">
+  <app-project-list
+    [projects]="projects"
+    (saveListItem)="onSaveListItem($event)"
+  >
+  </app-project-list>
+</ng-container>
