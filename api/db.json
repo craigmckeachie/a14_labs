@@ -13,7 +13,7 @@
     },
     {
       "id": 1,
-      "name": "Wisozk Group",
+      "name": "Wisozk Groups",
       "description": "Centralized interactive application. Exercitationem nulla ut ipsam vero quasi enim quos doloribus voluptatibus.",
       "imageUrl": "assets/placeimg_500_300_arch1.jpg",
       "contractTypeId": 4,
@@ -24,7 +24,7 @@
     },
     {
       "id": 2,
-      "name": "Denesik LLC",
+      "name": "Denesik LLCs",
       "description": "Re-contextualized dynamic moratorium. Aut nulla soluta numquam qui dolor architecto et facere dolores.",
       "imageUrl": "assets/placeimg_500_300_arch12.jpg",
       "contractTypeId": 6,
