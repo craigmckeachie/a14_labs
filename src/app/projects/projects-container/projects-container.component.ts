@@ -30,7 +30,6 @@ export class ProjectsContainerComponent implements OnInit {
   errorMessage$!: Observable<string>;
   loading$!: Observable<boolean>;
   saving$!: Observable<boolean>;
-  private searchTerms = new Subject<string>();
 
   constructor(private store: Store<State>) {}
 
@@ -40,10 +39,6 @@ export class ProjectsContainerComponent implements OnInit {
     this.loading$ = this.store.pipe(select(getLoading));
     this.saving$ = this.store.pipe(select(getSaving));
     this.store.dispatch(load());
-  }
-
-  onSearch(term: string) {
-    this.searchTerms.next(term);
   }
 
   onSaveListItem(event: any) {
