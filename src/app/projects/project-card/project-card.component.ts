@@ -9,6 +9,7 @@ import { Project } from '../shared/project.model';
 export class ProjectCardComponent implements OnInit {
   @Input()
   project!: Project;
+
   @Output()
   edit = new EventEmitter<any>();
 

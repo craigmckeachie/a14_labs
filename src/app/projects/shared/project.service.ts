@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 import { Project } from './project.model';
 import { catchError, delay } from 'rxjs/operators';
 
+export const ERROR_LOADING_PROJECTS = 'An error occurred loading the projects.';
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -36,7 +38,7 @@ export class ProjectService {
       // delay(2000),
       catchError((error: HttpErrorResponse) => {
         console.log(error);
-        return throwError('An error occurred loading the projects.');
+        return throwError(ERROR_LOADING_PROJECTS);
       })
     );
   }

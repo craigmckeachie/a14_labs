@@ -42,16 +42,16 @@ export class ProjectsContainerComponent implements OnInit, OnDestroy {
           return this.projectService.listByName(term);
         })
       )
-      .subscribe(
-        (data) => {
+      .subscribe({
+        next: (data) => {
           this.loading = false;
           this.projects = data;
         },
-        (error) => {
+        error: (error) => {
           this.loading = false;
           this.errorMessage = error;
-        }
-      );
+        },
+      });
   }
 
   ngOnDestroy(): void {
